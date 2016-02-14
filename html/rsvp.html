@@ -1,0 +1,42 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">RSVPlease</div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">My name is:</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="name" type="text" ng-model="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-12 col-sm-2 control-label">And I will...</label>
+                <span class="col-xs-6 col-sm-5">
+                    <input id="yes" type="radio" name="attending" value="yes" ng-model="attendance">
+                    <label for="yes">be attending</label>
+                </span>
+                <span class="col-xs-6 col-sm-5">
+                    <input id="no" type="radio" name="attending" value="no" ng-model="attendance">
+                    <label for="no">not be attending</label>
+                </span>
+            </div>
+            <div class="form-group" ng-show="attendance=='yes'">
+                <label class="col-sm-2 control-label" for="guests">With...</label>
+                <div class="col-sm-10">
+                    <span class="input-group">
+                        <input class="form-control" id="guests" type="number" min="0" max="7" ng-init="guestsNo = 0" ng-model="guestsNo">
+                        <span class="input-group-addon">guests</span>
+                    </span>
+                </div>
+            </div>
+            <div ng-repeat="guestNameObj in populateGuests() track by $index">
+                <div class="form-group" ng-show="attendance=='yes'">
+                    <label class="col-sm-2 control-label" for="guestNameKey">Name of guest {{$index + 1}}</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="guestNameKey" type="text" ng-model="guestNameObj.name">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" ng-click="validateAndSubmit()">RSVP</button>
+        </form>
+    </div>
+</div>
