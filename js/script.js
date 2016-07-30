@@ -30,7 +30,7 @@ angular.module('wedding', ['ngRoute'])
             })
             .otherwise({
                 redirectTo: '/'
-            })
+            });
     })
 
     .controller('navController', function NavController($scope) {
@@ -91,7 +91,6 @@ angular.module('wedding', ['ngRoute'])
                 scope.address = attrs.address;
                 scope.zip = attrs.zip;
                 scope.href = attrs.href;
-
                 scope.maplink = createLink(scope.address, scope.zip);
             }
         }
