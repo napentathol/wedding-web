@@ -16,12 +16,12 @@ angular.module('wedding', ['ngRoute'])
             .when('/events', {
                 templateUrl: 'html/events.html'
             })
-            .when('/party', {
+            /*.when('/party', {
                 templateUrl: 'html/party.html'
             })
             .when('/bloomington', {
                 templateUrl: 'html/bloomington.html'
-            })
+            })*/
             .when('/travel', {
                 templateUrl: 'html/travel.html'
             })
@@ -84,13 +84,15 @@ angular.module('wedding', ['ngRoute'])
                 address: '@',
                 zip: '@',
                 maplink: '@',
-                href: '@'
+                href: '@',
+                phone: '@'
             },
             link: function (scope, element, attrs) {
                 scope.name = attrs.name;
                 scope.address = attrs.address;
                 scope.zip = attrs.zip;
                 scope.href = attrs.href;
+                scope.phone = attrs.phone;
                 scope.maplink = createLink(scope.address, scope.zip);
             }
         }
