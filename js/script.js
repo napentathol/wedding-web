@@ -96,6 +96,20 @@ angular.module('wedding', ['ngRoute'])
         }
     })
 
+    .directive('person', function () {
+        return {
+            transclude: true,
+            restrict: 'E',
+            templateUrl: 'html/person.html',
+            scope: {
+                name: '@'
+            },
+            link: function (scope, element, attrs) {
+                scope.name = attrs.name;
+            }
+        }
+    })
+
     .directive('navigation', function () {
         return {
             controller: 'navController',
