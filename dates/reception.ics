@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:wedding-2@sodiumlabs.us
+DTSTAMP:20170624T203000Z
+ORGANIZER;CN=Alex Webster:MAILTO:ac.webster1990@gmail.com
+DTSTART:20170624T213000Z
+DTEND:20170625T033000Z
+SUMMARY:Courtney and Alex Reception
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE: Courtney and Alex are getting hitched!
+LOCATION:Indiana Memorial Union Bldg, 900 E 7th St, Bloomington, IN 47405
+URL:www.courtneyandalex.us
+END:VEVENT
+END:VCALENDAR
