@@ -14,10 +14,15 @@
 <noscript>This site relies heavily on javascript, sorry.</noscript>
 
 <div>
-    <div class="container-fluid">
-        <navigation></navigation>
-        <div ng-view></div>
+    <navigation></navigation>
+    <div class="body full-width">
+        <div class="container-fluid full-width">
+            <div class="full-width" ng-view></div>
+        </div>
     </div>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <span  class="navbar-brand">Currently under construction</span>
+    </nav>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

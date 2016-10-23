@@ -7,10 +7,23 @@ html, body {
 
 body { padding-top: 70px; }
 
+.body {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    overflow: auto;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
 .script-style {
     font-family: 'Pacifico', cursive;
 }
 
 .centered {
     text-align: center;
+}
+
+.full-width {
+    width: 100%;
 }
