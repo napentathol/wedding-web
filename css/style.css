@@ -32,7 +32,7 @@ body { padding-top: 70px; }
 
 .announce-container{
     background:rgba(255,255,255,0.7);
-    padding: 120px 180px;
+    padding: 150px 200px;
 }
 
 .navbar-inverse .navbar-collapse{
@@ -44,4 +44,5 @@ body { padding-top: 70px; }
     font-family: 'Raleway', Helvetica, sans-serif;
     text-transform: uppercase;
     color: #fff;
+    text-align: center;
 }
