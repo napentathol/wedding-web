@@ -30,7 +30,7 @@ body { padding-top: 80px; }
 
 .announce-container{
     background:rgba(255,255,255,0.7);
-    padding: 120px 180px;
+    padding: 100px 180px;
     border-radius: 0px !important;
 }
 
@@ -65,8 +65,8 @@ body { padding-top: 80px; }
 
 
 .container-fluid{
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 16%;
+    padding-left: 16%;
 }
 
 .navbar {
