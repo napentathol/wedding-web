@@ -53,3 +53,8 @@ body { padding-top: 70px; }
     color: #fff;
     font-family: 'Raleway', Helvetica, sans-serif;
 }
+
+.container-fluid {
+    padding-right: 15%;
+    padding-left: 15%;
+}
