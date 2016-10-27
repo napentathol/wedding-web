@@ -35,7 +35,7 @@ body { padding-top: 70px; }
     padding: 150px 200px;
 }
 
-.navbar-inverse .navbar-collapse{
+.navbar-inverse .navbar-collapse, .navbar-fixed-top{
     border-width: 0px;
 }
 
