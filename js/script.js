@@ -16,6 +16,9 @@ angular.module('wedding', ['ngRoute'])
             .when('/events', {
                 templateUrl: 'html/events.html'
             })
+            .when('/howwemet', {
+                templateUrl: 'html/howwemet.html'
+            })
             /*.when('/party', {
                 templateUrl: 'html/party.html'
             })
