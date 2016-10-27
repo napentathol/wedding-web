@@ -14,11 +14,9 @@ body { padding-top: 70px; }
 
 .body {
     position: absolute;
-    top: 50px;
-    bottom: 50px;
+    top: 100px;
+    bottom: 100px;
     overflow: auto;
-    padding-top: 21px;
-    padding-bottom: 21px;
     font-family: 'Raleway', Helvetica, sans-serif;
 }
 
@@ -62,4 +60,8 @@ body { padding-top: 70px; }
 .container-fluid{
     padding-right: 15%;
     padding-left: 15%;
+}
+
+.navbar {
+    height: 100px;
 }
