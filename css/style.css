@@ -42,9 +42,13 @@ body { padding-top: 70px; }
 .navbar-inverse{
     background: none;
     font-family: 'Raleway', Helvetica, sans-serif;
-    text-transform: uppercase;
-    color: #fff;
     text-align: center;
+}
+
+.navbar-nav {
     font-weight: bold;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Raleway', Helvetica, sans-serif;
 }
