@@ -32,5 +32,16 @@ body { padding-top: 70px; }
 
 .announce-container{
     background:rgba(255,255,255,0.7);
-    padding: 20px;
+    padding: 120px 180px;
+}
+
+.navbar-inverse .navbar-collapse{
+    border-width: 0px;
+}
+
+.navbar-inverse{
+    background: none;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #fff;
 }
