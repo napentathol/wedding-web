@@ -43,6 +43,7 @@ body { padding-top: 70px; }
     background: none;
     font-family: 'Raleway', Helvetica, sans-serif;
     text-align: center;
+    border-width: 0px;
 }
 
 .navbar-nav {
