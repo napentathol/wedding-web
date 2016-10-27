@@ -54,6 +54,10 @@ body { padding-top: 70px; }
     font-family: 'Raleway', Helvetica, sans-serif;
 }
 
+.navbar-nav li a {
+    color: #fff;
+}
+
 .container-fluid {
     padding-right: 15%;
     padding-left: 15%;
