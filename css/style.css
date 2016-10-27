@@ -57,7 +57,6 @@ body { padding-top: 80px; }
     color: #fff !important;
     text-shadow: none !important;
     padding: 30px;
-    font-size: 20px;
 }
 
 .navbar-nav li a:hover{
@@ -72,4 +71,9 @@ body { padding-top: 80px; }
 
 .navbar {
     height: 80px;
+}
+
+.logo-image {
+    max-width: 100px;
+    height: auto;
 }
