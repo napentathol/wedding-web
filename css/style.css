@@ -57,6 +57,7 @@ body { padding-top: 80px; }
     color: #fff !important;
     text-shadow: none !important;
     padding: 30px;
+    font-size: 20px;
 }
 
 .navbar-nav li a:hover{
