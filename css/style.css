@@ -3,6 +3,11 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
+    background: url(../imgs/homepage-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body { padding-top: 70px; }
@@ -23,4 +28,9 @@ body { padding-top: 70px; }
 
 .full-width {
     width: 100%;
+}
+
+.announce-container{
+    background:rgba(255,255,255,0.7);
+    padding: 20px;
 }
