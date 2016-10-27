@@ -10,12 +10,12 @@ html, body {
     background-size: cover;
 }
 
-body { padding-top: 70px; }
+body { padding-top: 80px; }
 
 .body {
     position: absolute;
-    top: 100px;
-    bottom: 100px;
+    top: 80px;
+    bottom: 80px;
     overflow: auto;
     font-family: 'Raleway', Helvetica, sans-serif;
 }
@@ -64,5 +64,5 @@ body { padding-top: 70px; }
 }
 
 .navbar {
-    height: 100px;
+    height: 80px;
 }
