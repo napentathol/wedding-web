@@ -58,6 +58,11 @@ body { padding-top: 80px; }
     text-shadow: none !important;
 }
 
+.navbar-nav li a:hover{
+    color: #589fb6 !important;
+}
+
+
 .container-fluid{
     padding-right: 15%;
     padding-left: 15%;
