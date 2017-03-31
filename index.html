@@ -5,29 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/my.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C600%2C500%7CLibre+Baskerville%3A400i%2C400&amp;subset=latin" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="css/avada.css">
 </head>
-<body ng-app="wedding">
+<body ng-app="wedding" class="home page-template-default page page-id-6 fusion-body no-tablet-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop mobile-logo-pos-center layout-boxed-mode fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-image-hovers fusion-show-pagination-text do-animate" >
 <noscript>This site relies heavily on javascript, sorry.</noscript>
 
 <div>
     <navigation></navigation>
-    <div class="body full-width">
-        <div class="container-fluid full-width">
-            <div class="full-width" ng-view></div>
-        </div>
+    <div id="wrapper">
+        <div ng-view></div>
     </div>
-    <nav class="navbar navbar-inverse navbar-fixed-bottom">
-        <span  class="navbar-brand">Currently under construction</span>
-    </nav>
+    <div class="fusion-footer">
+        <footer id="footer" class="fusion-footer-copyright-area fusion-footer-copyright-center">
+            <div class="fusion-row">
+                <div class="fusion-copyright-content">
+                    <div class="fusion-copyright-notice" style="padding-bottom: 0px;">
+                        <div>Made with Love by Maggie Ruf</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/config.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

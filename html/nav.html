@@ -1,26 +1,41 @@
-<nav id="navigation" class="navbar navbar-inverse navbar-fixed-top">
-
-    <div class="container-fluid">
-        <div class="navbar-header" ng-class="{ active: isActive('#/')}">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">Home</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('#/howwemet')}"><a href="#/howwemet">How We Met</a></li>
-                <li ng-class="{ active: isActive('#/events')}"><a href="#/events">Ceremony</a></li>
-                <!-- Uncomment probably never
-                <li ng-class="{ active: isActive('#/party')}"><a href="#/party">Wedding Party</a></li>
-                <li ng-class="{ active: isActive('#/bloomington')}"><a href="#/bloomington">Bloomington</a></li> -->
-                <li ng-class="{ active: isActive('#/travel')}"><a href="#/travel">Accomodations</a></li>
-                <li ng-class="{ active: isActive('#/registry')}"><a href="#/registry">Registry</a></li>
-                <!-- Uncomment when RSVP ready
-                <li ng-class="{ active: isActive('#/rsvp')}"><a href="#/rsvp">RSVP</a></li> -->
-            </ul>
-        </div>
+<header class="fusion-header-wrapper">
+    <div class="fusion-header-v5 fusion-logo-center fusion-sticky-menu- fusion-sticky-logo- fusion-mobile-logo- fusion-mobile-menu-design-modern fusion-sticky-menu-only fusion-header-menu-align-center">
+        <div class="fusion-header-sticky-height"></div>
+        <div class="fusion-sticky-header-wrapper"> <!-- start fusion sticky header wrapper -->
+            <div class="fusion-header">
+                <div class="fusion-row">
+                    <div class="fusion-logo" data-margin-top="0px" data-margin-bottom="0px" data-margin-left="0px" data-margin-right="0px">
+                    </div>
+                    <div class="fusion-mobile-menu-icons">
+                        <a class="fusion-icon fusion-icon-bars" ng-click="toggleMobileView()"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fusion-secondary-main-menu">
+                <div class="fusion-row">
+                    <nav class="fusion-main-menu">
+                        <ul id="menu-main" class="fusion-menu">
+                            <li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="#/how-we-met/"><span class="menu-text">How We Met</span></a></li>
+                            <li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="#/the-big-day/"><span class="menu-text">The Big Day</span></a></li>
+                            <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="#/accommodations/"><span class="menu-text">Accommodations</span></a></li>
+                            <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="#/local-favorites/"><span class="menu-text">Local Favorites</span></a></li>
+                            <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="#/registry/"><span class="menu-text">Registry</span></a></li>
+                            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22 fusion-last-menu-item"><a href="#/rsvp/"><span class="menu-text">RSVP</span></a></li>
+                        </ul>
+                    </nav>
+                    <nav class="fusion-mobile-nav-holder" ng-style="mobileMenuVisible ? {'display': 'block'} : {'display': 'none'}">
+                        <ul id="menu-main" class="fusion-menu">
+                            <li id="mobile-menu-item-28" class="fusion-mobile-nav-item" style=""><a href="#/how-we-met/"><span class="menu-text">How We Met</span></a></li>
+                            <li id="mobile-menu-item-26" class="fusion-mobile-nav-item" style=""><a href="#/the-big-day/"><span class="menu-text">The Big Day</span></a></li>
+                            <li id="mobile-menu-item-25" class="fusion-mobile-nav-item" style=""><a href="#/accommodations/"><span class="menu-text">Accommodations</span></a></li>
+                            <li id="mobile-menu-item-24" class="fusion-mobile-nav-item" style=""><a href="#/local-favorites/"><span class="menu-text">Local Favorites</span></a></li>
+                            <li id="mobile-menu-item-23" class="fusion-mobile-nav-item" style=""><a href="#/registry/"><span class="menu-text">Registry</span></a></li>
+                            <li id="mobile-menu-item-22" class="fusion-mobile-nav-item" style=""><a href="#/rsvp/"><span class="menu-text">RSVP</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div> <!-- end fusion sticky header wrapper -->
     </div>
-</nav>
+    <div class="fusion-clearfix"></div>
+</header>

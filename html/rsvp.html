@@ -1,42 +1,82 @@
-<div class="panel panel-default">
-    <div class="panel-heading">RSVPlease</div>
-    <div class="panel-body">
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">My name is:</label>
-                <div class="col-sm-10">
-                    <input class="form-control" id="name" type="text" ng-model="name">
+<div>
+    <div class="fusion-page-title-bar fusion-page-title-bar-none fusion-page-title-bar-center">
+        <div class="fusion-page-title-row">
+            <div class="fusion-page-title-wrapper">
+                <div class="fusion-page-title-captions">
+                    <h1 class="entry-title" data-fontsize="30" data-lineheight="42">RSVP</h1>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-xs-12 col-sm-2 control-label">And I will...</label>
-                <span class="col-xs-6 col-sm-5">
-                    <input id="yes" type="radio" name="attending" value="yes" ng-model="attendance">
-                    <label for="yes">be attending</label>
-                </span>
-                <span class="col-xs-6 col-sm-5">
-                    <input id="no" type="radio" name="attending" value="no" ng-model="attendance">
-                    <label for="no">not be attending</label>
-                </span>
+        </div>
+    </div>
+    <div class="wed-side-padding wed-bottom-padding gform_wrapper">
+        <div class="wed-form-bottom-margin">
+            <span>Please RSVP by June 1st</span>
+        </div>
+        <form class="form-horizontal" role="form">
+            <div class="wed-form-bottom-margin">
+                <label class="gfield_label" for="firstName">Name</label>
+                <div class="ginput_complex ginput_container ginput_container_name">
+                    <span class="wed-side-by-side-form">
+                        <input type="text" name="firstName" id="firstName" value="" aria-label="First name" tabindex="1" ng-model="lastName">
+                        <label for="firstName">First</label>
+                    </span>
+                    <span class="wed-side-by-side-form">
+                        <input type="text" name="lastName" id="lastName" value="" aria-label="Last name" tabindex="2" ng-model="firstName">
+                        <label for="lastName">Last</label>
+                    </span>
+                </div>
             </div>
-            <div class="form-group" ng-show="attendance=='yes'">
-                <label class="col-sm-2 control-label" for="guests">With...</label>
-                <div class="col-sm-10">
+            <div class="wed-form-bottom-margin">
+                <label class="gfield_label" for="yes">And I will...</label>
+                <div class="ginput_complex ginput_container ginput_container_name">
+                    <span class="wed-side-by-side-form">
+                        <input id="yes" type="radio" name="attending" value="yes" ng-model="attendance" tabindex="3">
+                        <label for="yes">be attending</label>
+                    </span>
+                    <span class="wed-side-by-side-form">
+                        <input id="no" type="radio" name="attending" value="no" ng-model="attendance" tabindex="4">
+                        <label for="no">not be attending</label>
+                    </span>
+                </div>
+            </div>
+            <div class="wed-form-bottom-margin" ng-show="attendance=='no'">
+                <span>Sorry to hear you can't make it!<br>You will be missed</span>
+            </div>
+            <div class="wed-form-bottom-margin" ng-show="attendance=='yes'">
+                <label class="gfield_label" for="guests">With...</label>
+                <div>
                     <span class="input-group">
-                        <input class="form-control" id="guests" type="number" min="0" max="7" ng-init="guestsNo = 0" ng-model="guestsNo">
-                        <span class="input-group-addon">guests</span>
+                        <input class="form-control" id="guests" type="number" min="0" max="7" ng-init="guestsNo = 0" tabindex="5" ng-model="guestsNo">
+                        <span>guests</span>
                     </span>
                 </div>
             </div>
             <div ng-repeat="guestNameObj in populateGuests() track by $index">
-                <div class="form-group" ng-show="attendance=='yes'">
-                    <label class="col-sm-2 control-label" for="guestNameKey">Name of guest {{$index + 1}}</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="guestNameKey" type="text" ng-model="guestNameObj.name">
+                <div class="wed-form-bottom-margin">
+                    <label class="gfield_label" for="{{'guestFirstNameKey' + ($index + 1)}}">Name of guest {{$index + 1}}<span class="gfield_required">*</span></label>
+                    <div class="ginput_complex ginput_container ginput_container_name">
+                        <span class="wed-side-by-side-form">
+                            <input type="text" id="{{'guestFirstNameKey' + ($index + 1)}}" value="" aria-label="First name" tabindex="{{$index * 2 + 6}}" ng-model="guestNameObj.firstName">
+                            <label for="{{'guestFirstNameKey' + ($index + 1)}}">First</label>
+                        </span>
+                        <span class="wed-side-by-side-form">
+                            <input type="text" id="{{'guestLastNameKey' + ($index + 1)}}" value="" aria-label="Last name" tabindex="{{$index * 2 + 7}}" ng-model="guestNameObj.lastName">
+                            <label for="{{'guestLastNameKey' + ($index + 1)}}">Last</label>
+                        </span>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary" ng-click="validateAndSubmit()">RSVP</button>
+            <div class="wed-form-bottom-margin" ng-show="attendance=='yes'">
+                <label class="gfield_label" for="yes">Food Allergies?<span class="large-space"> </span>Song Recommendations?<span class="large-space"> </span>Questions?<span class="large-space"> </span>Comments?<span class="large-space"> </span>Concerns?</label>
+                <textarea ng-model="qcc" tabindex="22"></textarea>
+            </div>
+            <button class="gform_button button" ng-click="validateAndSubmit()">RSVP</button>
+            <div class="wed-form-bottom-margin" ng-show="warning">
+                <span style="color: #fe2020">{{warning}}</span>
+            </div>
+            <div class="wed-form-bottom-margin" ng-show="success">
+                <span style="color: #207e20">{{success}}</span>
+            </div>
         </form>
     </div>
 </div>

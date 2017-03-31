@@ -9,40 +9,38 @@ angular.module('wedding', ['ngRoute'])
             .when('/', {
                 templateUrl: 'html/home.html'
             })
-            /*.when('/rsvp', {
-             controller: 'rsvpController',
-             templateUrl: 'html/rsvp.html'
-             })/**/// uncomment when RSVP ready.
-            .when('/events', {
-                templateUrl: 'html/events.html'
+            .when('/the-big-day', {
+                templateUrl: 'html/the-big-day.html'
             })
-            .when('/howwemet', {
-                templateUrl: 'html/howwemet.html'
+            .when('/how-we-met', {
+                templateUrl: 'html/how-we-met.html'
             })
-            /*.when('/party', {
-                templateUrl: 'html/party.html'
+            .when('/accommodations', {
+                templateUrl: 'html/accommodations.html'
             })
-            .when('/bloomington', {
-                templateUrl: 'html/bloomington.html'
-            })*/
-            .when('/travel', {
-                templateUrl: 'html/travel.html'
+            .when('/local-favorites', {
+                templateUrl: 'html/local-favorites.html'
             })
             .when('/registry', {
                 templateUrl: 'html/registry.html'
             })
+            .when('/rsvp', {
+                 controller: 'rsvpController',
+                 templateUrl: 'html/rsvp.html'
+             })
             .otherwise({
                 redirectTo: '/'
             });
     })
 
     .controller('navController', function NavController($scope) {
-        $scope.isActive = function (viewLocation) {
-            return viewLocation === window.location.hash;
+        $scope.mobileMenuVisible = false;
+        $scope.toggleMobileView = function () {
+            $scope.mobileMenuVisible = !$scope.mobileMenuVisible;
         };
     })
 
-    .controller('rsvpController', function ($scope) {
+    .controller('rsvpController', function ($scope, $http) {
         $scope.populateGuests = function () {
             var old = $scope.guestNames;
             $scope.guestNames = [];
@@ -59,17 +57,68 @@ angular.module('wedding', ['ngRoute'])
         };
 
         $scope.validateAndSubmit = function () {
+            $scope.success = null;
+            if( !$scope.firstName )
+            {
+                $scope.warning = "Must add your first name.";
+                return;
+            }
+            if( !$scope.lastName )
+            {
+                $scope.warning = "Must add your last name.";
+                return;
+            }
+            if( !$scope.attendance )
+            {
+                $scope.warning = "Must set attendance";
+                return;
+            }
+
             var outObj = {
-                name: $scope.name,
+                firstName: $scope.firstName,
+                lastName: $scope.lastName,
                 attendance: $scope.attendance,
-                guests: []
+                guests: [],
+                qcc: $scope.qcc
             };
 
             for (var i = 0; i < $scope.guestsNo; i++) {
-                outObj.guests.push($scope.guestNames[i].name);
+                if( !$scope.guestNames[i].firstName )
+                {
+                    $scope.warning = "Must add first name for guest " + i;
+                    return;
+                }
+                if( !$scope.guestNames[i].lastName )
+                {
+                    $scope.warning = "Must add last name for guest " + i;
+                    return;
+                }
+
+                outObj.guests.push({
+                    firstName: $scope.guestNames[i].firstName,
+                    lastName: $scope.guestNames[i].lastName
+                });
             }
 
+            console.log("Sending data...");
             console.log(outObj);
+            $http.post( wedding.api.endpoint, outObj ).then(
+                function success( response ) {
+                    $scope.warning = null;
+                    $scope.success = response.data;
+                    console.log( response.data );
+                    console.log("data sent!")
+                },
+                function error( response ) {
+                    if( response.data ) {
+                        $scope.warning = "Failed to complete request, if this continues contact Alex: " + response.data;
+                    } else {
+                        $scope.warning = "Failed to complete request, if this continues contact Alex."
+                    }
+                    console.error( response.data );
+                    console.error( "data failed to send!" )
+                }
+            );
         }
     })
 
